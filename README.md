@@ -1,2 +1,3 @@
-# AoC2017
-Advent of Code 2017 (Ruby)
+# Advent of Code
+Ruby / Python\
+[https://adventofcode.com](https://adventofcode.com "Advent Of Code") 
