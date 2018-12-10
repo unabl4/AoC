@@ -6,9 +6,6 @@ r = re.compile(r"position=<(.*?)> velocity=<(.*)>")
 # extract the numbers: x,y,dx,dy
 def parse_point(s):
     m = r.match(s)
-    if not m:
-        print("not matched", s)
-        quit()
     t = [[int(j) for j in i.split(',')] for i in m.groups()]
     return [x for s in t for x in s] # flatten
 
