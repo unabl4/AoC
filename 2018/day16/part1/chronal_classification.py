@@ -59,7 +59,6 @@ if __name__ == "__main__":
 
         for op in OPS:
             instruction[0] = op # substitute (for now)
-            print(instruction)
             if execute_operation(instruction, state_before) == state_after:
                 same_counter += 1
             if same_counter >= 3:
