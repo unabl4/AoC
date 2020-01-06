@@ -36,7 +36,7 @@ public class SecureContainer {
         if(!m.find()) return false;
 
         // check if digits are not in decreasing order
-        int l = (int)Math.floor(Math.log(password))+1;
+        int l = (int)Math.floor(Math.log10(password))+1;    // 6
         int pd = -1;
         for(int i=0; i < l; i++) {
             int z = (int)Math.pow(10, l-1-i);   // divider
