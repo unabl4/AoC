@@ -1,11 +1,6 @@
 package com.aoc.day4.part2;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class SecureContainer {
-    private static final Pattern doubleDigitRegex = Pattern.compile("(\\d)\\1");
-
     public static void main(String[] args) {
         System.out.println(countCorrectPasswords(172851, 675869));
     }
@@ -22,12 +17,6 @@ public class SecureContainer {
         return c;
     }
 
-    /*
-        It is a six-digit number.
-        The value is within the range given in your puzzle input.
-        Two adjacent digits are the same (like 22 in 122345).
-        Going from left to right, the digits never decrease; they only ever increase or stay the same (like 111123 or 135679).
-     */
     public static boolean isCorrectPassword(int password) {
         if(password < 100_000 || password > 999_999) return false;
 
@@ -48,16 +37,15 @@ public class SecureContainer {
 
         int i = 0;
         while(i < l) {
-            int j = i+1;
-            int c = 1;
+            int c = 0;
 
-            while(j < l && digits[j] == digits[i]) {
-                j++;
+            while(i+1 < l && digits[i+1] == digits[i]) {
                 c++;
+                i++;
             }
 
-            if(c == 2) return true;
-            i = j;
+            if(c == 1) return true;
+            i++;
         }
 
         return false;
